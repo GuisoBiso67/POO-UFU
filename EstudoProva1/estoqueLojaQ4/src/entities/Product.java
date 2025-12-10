@@ -21,20 +21,16 @@ public class Product {
         return this.price;
     }
 
-    public void sellProduct(Product p, int quant){ // venda
-        int quantityStock = p.getQuantity();
-        if(quantityStock < quant){
+    public void sellProduct(Product p, int quant){ // venda;
+        if(p.getQuantity() < quant){
             System.out.println("Estoque indisponível, não foi possível realizar a compra.");
         }else{
-            quantityStock -= quant;
-            p.quantity = quantityStock;
+            p.quantity = p.getQuantity() - quant;
             System.out.println("Compra realizada com sucesso. Obrigado pela preferencia!:)");
         }
     }
 
-    public void buyProduct(Product p, int quant){ // reposição
-        int quantityStock = p.getQuantity();
-        quantityStock += quant;
-        p.quantity = quantityStock;
+    public void buyProduct(Product p, int quant){ // reposição;
+        p.quantity += quant;
     }
 }

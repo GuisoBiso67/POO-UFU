@@ -1,6 +1,6 @@
 package entities;
 
-import java.util.ArrayList;
+import java.util.*;
 
 public class Stock {
     private ArrayList<Product> products;
@@ -9,7 +9,7 @@ public class Stock {
         products = new ArrayList<>();
     }
 
-    public void addProduct(Product p){
+    public void addProduct(Product p){ // adiciona produtos a lista;
         products.add(p);
     }
 
@@ -38,7 +38,7 @@ public class Stock {
         }
     }
 
-    public Product searchProduct(String productName){
+    public Product searchProduct(String productName){ // procura produto no estoque;
         for(Product p : products){
             if(p.getDescription().equals(productName)){
                 return p;
